@@ -3,10 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
     <title>Rock Paper Scissors Game</title>
 </head>
 <body>
+    <nav id="navbar">
+        <div>
+            <h1>Rock Paper Scizzorz</h1>
+        </div>
+    </nav>
+    <section id="main-body">
+        <div class="main-container">
+            <div class="round">
+                <h3>Round <span class="round-num">X</span> </h3>
+            </div>
+
+            <!-- Scores Box -->
+
+            <div class="scores">
+                <div class="scores-box">
+                    <h3>Player Win</h3>
+                    <p><span class="win">Y</span></p>
+                </div>
+                <div class="scores-box">
+                    <h3>Ties</h3>
+                    <p><span class="tie">Y</span></p>
+                </div>
+                <div class="scores-box">
+                    <h3>Computer Win</h3>
+                    <p><span class="comp-win">Y</span></p>
+                </div>
+            </div>
+
+            <!-- Selection Images Box -->
+            <div class="selection">
+                <div class="select-left">
+                    
+                </div>
+                <div class="select-right"></div>             
+            </div>
+            <div class="controls">
+                <button class="btn-rock">
+                    <a href="#" class="rock">Rock</a>
+                </button>
+                <button class="btn-paper">
+                    <a href="#" class="paper">Paper</a>
+                </button>
+                <button class="btn-scissors">
+                    <a href="#" class="scissors">Scissors</a>
+                </button>
+            </div>
+            <div class="footer">
+                <p>Round: <span class="who-wins">X beats Y - You Win This Round!</span></p>
+            </div>
+
+
+
+
+
+
+        </div>
+    </section>
     
 
     <script src="js/main.js"></script>

@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    
+    border: none;
+    background: inherit;   
+
+}
+
+a {
+    color:#333;
+    text-decoration: none;
+
+}
+
+/* Navbar/Header */
+#navbar {
+    height: 50px;
+}
+#navbar div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background: #f3f3f3;
+}
+
+
+
+/* Main Body */
+
+#main-body {
+    height: calc(100vh - 50px);
+    background: #ddd;        
+}
+
+#main-body .main-container {    
+    height: 100%;
+    max-width: 1200px;    
+    margin: auto;    
+}
+
+#main-body .main-container .round {    
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Scores Box */
+
+#main-body .main-container .scores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#main-body .main-container .scores .scores-box {
+    flex: 1;
+    padding: 1rem 2rem;
+}
+
+/* Selection Image Box */
+
+#main-body .main-container .selection {
+    height: 40vh;
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+      
+}
+
+#main-body .main-container .selection .select-left,
+#main-body .main-container .selection .select-right {       
+    background: #f1f1f1;    
+    height: 0;
+    width: 25%;
+    padding-bottom: 25%;
+    margin: 1rem;
+    flex-wrap: nowrap;
+}
+
+#main-body .main-container .controls {
+    margin-top: 2rem; 
+    padding: 2rem;   
+    display: flex;  
+    background: #f3f3f3;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    
+}
+
+#main-body .main-container .controls button {
+    padding: 1rem 3rem;
+}
+
+/* Rounds Count */
+#main-body .main-container .footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
