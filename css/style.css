@@ -7,6 +7,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.4;
+    background-color: #f3f3f3;
 }
 
 img {
@@ -46,18 +47,37 @@ a {
 
 #main-body {
     height: calc(100vh - 50px);
-    background: #ddd;        
+    background: #333;        
 }
 
 #main-body .main-container {    
     height: 100%;
     max-width: 1200px;    
-    margin: auto;    
+    margin: auto;
+    background: #ddd    
 }
 
 #main-body .main-container .round {    
     text-align: center;
     padding: 1rem;
+}
+
+#main-body .main-container .round button {
+    display: inline-block;
+    background: #f3f3f3;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    outline: none;
+}
+#main-body .main-container .round button:hover {    
+    background: #333;
+    color: #f3f3f3;
+
+}
+
+#main-body .main-container .round h3 {
+    display: inline-block;
+    margin-right: 1rem;
 }
 
 /* Scores Box */

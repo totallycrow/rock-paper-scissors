@@ -18,7 +18,8 @@
     <section id="main-body">
         <div class="main-container">
             <div class="round">
-                <h3>Round <span class="round-num">X</span> </h3>
+                <h3>Round <span class="round-num">1</span> </h3>
+                <button id="reset">Reset</button>
             </div>
 
             <!-- Scores Box -->
@@ -26,15 +27,15 @@
             <div class="scores">
                 <div class="scores-box">
                     <h3>Player Win</h3>
-                    <p><span class="win">Y</span></p>
+                    <p><span class="win">0</span></p>
                 </div>
                 <div class="scores-box">
                     <h3>Ties</h3>
-                    <p><span class="tie">Y</span></p>
+                    <p><span class="tie">0</span></p>
                 </div>
                 <div class="scores-box">
                     <h3>Computer Win</h3>
-                    <p><span class="comp-win">Y</span></p>
+                    <p><span class="comp-win">0</span></p>
                 </div>
             </div>
 
@@ -46,18 +47,18 @@
                 <div class="select-right"></div>             
             </div>
             <div class="controls">
-                <button class="btn-rock">
+                <button id="btn-rock" class="btn-action">
                     <a href="#" class="rock">Rock</a>
                 </button>
-                <button class="btn-paper">
+                <button id="btn-paper"class="btn-action btn-paper">
                     <a href="#" class="paper">Paper</a>
                 </button>
-                <button class="btn-scissors">
+                <button id="btn-scissors" class="btn-action btn-scissors">
                     <a href="#" class="scissors">Scissors</a>
                 </button>
             </div>
             <div class="footer">
-                <p>Round: <span class="who-wins">X beats Y - You Win This Round!</span></p>
+                <p>Round: <span id="round-num-bot">1</span><span> - </span><span class="who-wins"></span></p>
             </div>
 
 
