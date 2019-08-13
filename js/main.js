@@ -9,6 +9,7 @@ let userScore = initScore;
 let compScore = initScore;
 let drawScore = initScore;
 
+
 // ******* PRE-GAME ************
 
 // Reset Game
@@ -26,10 +27,19 @@ function gameReset() {
   roundNum = 1;
   userScore = initScore;
   compScore = initScore;
-  drawScore = initScore; 
+  drawScore = initScore;
+  
+  playerImg.innerHTML = '';
+  compImg.innerHTML = '';
 }
 
 resetButton.addEventListener("click", gameReset);
+
+// Selection Icons
+let playerImg = document.getElementById("player-img");
+let compImg = document.getElementById("comp-img");
+ 
+
 
 
 // Round Numbers
@@ -60,6 +70,8 @@ function rockSelectPlay() {
   console.log(playerSelection);
   computerSelection = computerPlay();
   console.log(computerSelection);
+  playerImg.innerHTML = '<i class="far fa-hand-rock"></i>';
+  assingCompIcon();
   game();
 }
 
@@ -67,11 +79,20 @@ rockPlay.addEventListener("click", rockSelectPlay);
 
 function paperSelectPlay() {
   playerSelection = choices[0];
+  
+  
   console.log(playerSelection);
   computerSelection = computerPlay();
+
+
   console.log(computerSelection);
+  playerImg.innerHTML = '<i class="far fa-hand-paper"></i>';
+  assingCompIcon();
   game();
 }
+
+
+
 
 paperPlay.addEventListener("click", paperSelectPlay);
 
@@ -80,6 +101,8 @@ function scissorsSelectPlay() {
   console.log(playerSelection);
   computerSelection = computerPlay();
   console.log(computerSelection);
+  playerImg.innerHTML = '<i class="far fa-hand-scissors"></i>';
+  assingCompIcon();
   game();
 }
 
@@ -92,6 +115,20 @@ function computerPlay() {
   let computerChoice = choices[Math.floor(Math.random() * choices.length)];
   return computerChoice;
 };
+
+// Define computer icon
+
+function assingCompIcon() {
+  if(computerSelection === "SCISSORS") {
+    compImg.innerHTML = '<i class="far fa-hand-scissors"></i>';
+  } else if (computerSelection === "PAPER") {
+    compImg.innerHTML = '<i class="far fa-hand-paper"></i>';
+  } else {
+    compImg.innerHTML = '<i class="far fa-hand-rock"></i>';
+  }
+}
+
+
 
 // ***************** MAIN GAME ************************
 

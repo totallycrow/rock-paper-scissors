@@ -13,12 +13,27 @@ body {
 img {
     width: 100%;
 }
+.selection #player-img,
+.selection #comp-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.selection #player-img i,
+.selection #comp-img i {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 button {
     
     border: none;
     background: inherit;   
-
 }
 
 a {
