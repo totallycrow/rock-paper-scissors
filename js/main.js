@@ -1,3 +1,5 @@
+// Main Variables
+
 let choices = ['PAPER', 'ROCK', 'SCISSORS'];
 let roundNum = 1;
 
@@ -35,12 +37,9 @@ function gameReset() {
 
 resetButton.addEventListener("click", gameReset);
 
-// Selection Icons
+// Select Icons
 let playerImg = document.getElementById("player-img");
 let compImg = document.getElementById("comp-img");
- 
-
-
 
 // Round Numbers
 let gameRound = document.querySelector(".round-num");
@@ -64,46 +63,34 @@ let rockPlay = document.getElementById("btn-rock");
 let paperPlay = document.getElementById("btn-paper");
 let scissorsPlay = document.getElementById("btn-scissors");
 
+// **** Button Clicks ****
 
-function rockSelectPlay() {
-  playerSelection = choices[1];
-  console.log(playerSelection);
+function compSelectionStartGame() {
   computerSelection = computerPlay();
-  console.log(computerSelection);
-  playerImg.innerHTML = '<i class="far fa-hand-rock"></i>';
   assingCompIcon();
   game();
+}
+
+function rockSelectPlay() {
+  playerSelection = choices[1];   
+  playerImg.innerHTML = '<i class="far fa-hand-rock"></i>'; 
+  compSelectionStartGame();  
 }
 
 rockPlay.addEventListener("click", rockSelectPlay);
 
 function paperSelectPlay() {
   playerSelection = choices[0];
-  
-  
-  console.log(playerSelection);
-  computerSelection = computerPlay();
-
-
-  console.log(computerSelection);
   playerImg.innerHTML = '<i class="far fa-hand-paper"></i>';
-  assingCompIcon();
-  game();
+  compSelectionStartGame();
 }
-
-
-
 
 paperPlay.addEventListener("click", paperSelectPlay);
 
 function scissorsSelectPlay() {
   playerSelection = choices[2];
-  console.log(playerSelection);
-  computerSelection = computerPlay();
-  console.log(computerSelection);
   playerImg.innerHTML = '<i class="far fa-hand-scissors"></i>';
-  assingCompIcon();
-  game();
+  compSelectionStartGame();
 }
 
 scissorsPlay.addEventListener("click", scissorsSelectPlay);
@@ -127,8 +114,6 @@ function assingCompIcon() {
     compImg.innerHTML = '<i class="far fa-hand-rock"></i>';
   }
 }
-
-
 
 // ***************** MAIN GAME ************************
 
@@ -177,7 +162,6 @@ function game() {
           console.log("Draw");
           drawScore++;
         };
-
         
         roundNum++
         playerResult.textContent = userScore;
@@ -188,14 +172,7 @@ function game() {
         // Update round number
         gameRound.textContent = roundNum;
         gameRoundBottom.textContent = (roundNum-1);
-  }
-// if (userScore > compScore) {
-//   console.log("** You win the game! **");
-// } else if (userScore < compScore) {
-//   console.log("** You lose the game! **");
-//   } else {
-//   console.log("** It's a Draw! **");
-//   }
+  };
 
 
 
