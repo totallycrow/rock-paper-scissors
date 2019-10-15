@@ -144,6 +144,28 @@ a {
     padding: 1rem 3rem;
 }
 
+/* Player Selection Buttons */
+
+.controls button {
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    transition: background .3s ease-in-out;
+}
+.controls button:hover {       
+    background: #333;
+    transition: background .3s ease-in-out;
+    color: #f3f3f3;
+}
+.controls button a {    
+    color: #333;
+    transition: color .7s ease-in-out;
+}
+.controls button:hover a {       
+    color: #f3f3f3;
+    transition: color .7s ease-in-out;
+    ;
+}
+
 /* Rounds Count */
 #main-body .main-container .footer {
     text-align: center;
