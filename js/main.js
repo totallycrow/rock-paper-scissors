@@ -1,15 +1,31 @@
 // Main Variables
 
-let choices = ['PAPER', 'ROCK', 'SCISSORS'];
+let choices = [
+  {
+    id:'PAPER',
+    strength: 'ROCK',
+    weakness: 'SCISSORS'
+  },
+  {
+    id:'ROCK',
+    strength: 'SCISSORS',
+    weakness: 'PAPER'
+  },
+  {
+    id:'SCISSORS',
+    strength: 'PAPER',
+    weakness: 'ROCK'
+  } 
+
+];
 let roundNum = 1;
 
-let computerSelection;
-let playerSelection;
+let computerSelection, playerSelection;
 
 let initScore = 0;
-let userScore = initScore;
-let compScore = initScore;
-let drawScore = initScore;
+
+let userScore = compScore = drawScore = initScore;
+
 
 
 // ******* PRE-GAME ************
@@ -65,30 +81,36 @@ let scissorsPlay = document.getElementById("btn-scissors");
 
 // **** Button Clicks ****
 
+// Computer playing part
 function compSelectionStartGame() {
   computerSelection = computerPlay();
   assingCompIcon();
   game();
 }
 
+// Player selects rock
 function rockSelectPlay() {
-  playerSelection = choices[1];   
+  playerSelection = choices[1].id;   
   playerImg.innerHTML = '<i class="far fa-hand-rock"></i>'; 
   compSelectionStartGame();  
 }
 
 rockPlay.addEventListener("click", rockSelectPlay);
 
+
+// Player selects Paper
 function paperSelectPlay() {
-  playerSelection = choices[0];
+  playerSelection = choices[0].id;
   playerImg.innerHTML = '<i class="far fa-hand-paper"></i>';
   compSelectionStartGame();
 }
 
 paperPlay.addEventListener("click", paperSelectPlay);
 
+
+// Player selects Scissors
 function scissorsSelectPlay() {
-  playerSelection = choices[2];
+  playerSelection = choices[2].id;
   playerImg.innerHTML = '<i class="far fa-hand-scissors"></i>';
   compSelectionStartGame();
 }
@@ -97,9 +119,11 @@ scissorsPlay.addEventListener("click", scissorsSelectPlay);
 
 
 // Define random pick for computer player
+var computerNumber;
 
 function computerPlay() {
-  let computerChoice = choices[Math.floor(Math.random() * choices.length)];
+  computerNumber = [Math.floor(Math.random() * choices.length)];
+  let computerChoice = choices[computerNumber].id;
   return computerChoice;
 };
 
@@ -127,36 +151,16 @@ function game() {
 
         // Compare Picks
 
-        if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+        if (playerSelection === choices[computerNumber].strength) {
           whoWinsCom.textContent = commentLose;
           console.log(commentLose);
           compScore++;  
   
-        } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
+        } else if (playerSelection === choices[computerNumber].weakness) {
           whoWinsCom.textContent = commentWin;
           console.log(commentWin);
           userScore++;          
   
-        } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-          whoWinsCom.textContent = commentWin;
-          console.log(commentWin);
-          userScore++;
-  
-        } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-          whoWinsCom.textContent = commentLose;
-          console.log(commentLose);
-          compScore++;
-
-        } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-          whoWinsCom.textContent = commentLose;
-          console.log(commentLose);
-          compScore++;
-
-        } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-          whoWinsCom.textContent = commentWin;
-          console.log(commentWin);
-          userScore++;
-
         } else {
           whoWinsCom.textContent = "Draw!";
           console.log("Draw");
