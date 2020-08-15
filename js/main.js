@@ -88,34 +88,37 @@ function compSelectionStartGame() {
   game();
 }
 
-// Player selects rock
-function rockSelectPlay() {
-  playerSelection = choices[1].id;   
-  playerImg.innerHTML = '<i class="far fa-hand-rock"></i>'; 
-  compSelectionStartGame();  
-}
+// **** Player Selection Button Click ****
 
-rockPlay.addEventListener("click", rockSelectPlay);
+document.querySelector('.controls').addEventListener('click', function(event){
+    
+  if (event.target.id === "btn-rock") {
+    console.log(event.target);
 
+    // Player selects rock
+    playerSelection = choices[1].id;   
+    playerImg.innerHTML = '<i class="far fa-hand-rock"></i>'; 
+    
+  }
+  else if (event.target.id === "btn-paper") {
 
-// Player selects Paper
-function paperSelectPlay() {
-  playerSelection = choices[0].id;
-  playerImg.innerHTML = '<i class="far fa-hand-paper"></i>';
+    // Player selects rock
+    playerSelection = choices[0].id;
+    playerImg.innerHTML = '<i class="far fa-hand-paper"></i>';
+    
+  }
+
+  else if (event.target.id === "btn-scissors") {
+
+    // Player selects rock
+    playerSelection = choices[2].id;
+    playerImg.innerHTML = '<i class="far fa-hand-scissors"></i>';
+    
+  } else return;
   compSelectionStartGame();
-}
-
-paperPlay.addEventListener("click", paperSelectPlay);
+});
 
 
-// Player selects Scissors
-function scissorsSelectPlay() {
-  playerSelection = choices[2].id;
-  playerImg.innerHTML = '<i class="far fa-hand-scissors"></i>';
-  compSelectionStartGame();
-}
-
-scissorsPlay.addEventListener("click", scissorsSelectPlay);
 
 
 // Define random pick for computer player
